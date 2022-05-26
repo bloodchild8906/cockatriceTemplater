@@ -1,0 +1,212 @@
+<XpoDataSet>
+  <xs:schema id="XpoDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="XpoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TemplateItem">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OID" msdata:AutoIncrement="true" type="xs:int" />
+                <xs:element name="Category" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="100" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Description" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="100" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Colors" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="100" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="OptimisticLockField" type="xs:int" minOccurs="0" />
+                <xs:element name="GCRecord" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TemplateCategory">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OID" msdata:AutoIncrement="true" type="xs:int" />
+                <xs:element name="Name" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="100" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Description" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="100" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="OptimisticLockField" type="xs:int" minOccurs="0" />
+                <xs:element name="GCRecord" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="XPObjectType">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OID" msdata:AutoIncrement="true" type="xs:int" />
+                <xs:element name="TypeName" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="254" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="AssemblyName" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="254" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TemplateItemTemplateItems_CardReferenceCardReferences">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Oid" msdata:AutoIncrement="true" type="xs:int" />
+                <xs:element name="TemplateItems" type="xs:int" minOccurs="0" />
+                <xs:element name="CardReferences" type="xs:int" minOccurs="0" />
+                <xs:element name="OptimisticLockField" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="CardReference">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OID" msdata:AutoIncrement="true" type="xs:int" />
+                <xs:element name="UsedInTemplates" type="xs:int" minOccurs="0" />
+                <xs:element name="Card" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="100" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Count" type="xs:long" minOccurs="0" />
+                <xs:element name="OptimisticLockField" type="xs:int" minOccurs="0" />
+                <xs:element name="GCRecord" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="TemplateItemOID" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//TemplateItem" />
+        <xs:field xpath="OID" />
+      </xs:unique>
+      <xs:unique name="TemplateCategoryOID" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//TemplateCategory" />
+        <xs:field xpath="OID" />
+      </xs:unique>
+      <xs:unique name="XPObjectTypeOID" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//XPObjectType" />
+        <xs:field xpath="OID" />
+      </xs:unique>
+      <xs:unique name="XPObjectTypeTypeName">
+        <xs:selector xpath=".//XPObjectType" />
+        <xs:field xpath="TypeName" />
+      </xs:unique>
+      <xs:unique name="TemplateItemTemplateItems_CardReferenceCardReferencesOid" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//TemplateItemTemplateItems_CardReferenceCardReferences" />
+        <xs:field xpath="Oid" />
+      </xs:unique>
+      <xs:unique name="CardReferenceOID" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//CardReference" />
+        <xs:field xpath="OID" />
+      </xs:unique>
+      <xs:keyref name="FK_CardReferenceUsedInTemplatesOIDTemplateItem" refer="TemplateItemOID" msdata:DeleteRule="None">
+        <xs:selector xpath=".//CardReference" />
+        <xs:field xpath="UsedInTemplates" />
+      </xs:keyref>
+      <xs:keyref name="FK_TemplateItemTemplateItems_CardReferenceCardReferencesCardReferencesOIDCardReference" refer="CardReferenceOID" msdata:DeleteRule="None">
+        <xs:selector xpath=".//TemplateItemTemplateItems_CardReferenceCardReferences" />
+        <xs:field xpath="CardReferences" />
+      </xs:keyref>
+      <xs:keyref name="FK_TemplateItemTemplateItems_CardReferenceCardReferencesTemplateItemsOIDTemplateItem" refer="TemplateItemOID" msdata:DeleteRule="None">
+        <xs:selector xpath=".//TemplateItemTemplateItems_CardReferenceCardReferences" />
+        <xs:field xpath="TemplateItems" />
+      </xs:keyref>
+      <xs:keyref name="FK_TemplateItemCategoryOIDTemplateCategory" refer="TemplateCategoryOID" msdata:DeleteRule="None">
+        <xs:selector xpath=".//TemplateItem" />
+        <xs:field xpath="Category" />
+      </xs:keyref>
+    </xs:element>
+    <xs:annotation>
+      <xs:appinfo>
+        <msdata:Relationship name="FK_TemplateItemCategoryOIDTemplateCategory_x0021_" msdata:parent="TemplateItem" msdata:child="TemplateCategory" msdata:parentkey="Category" msdata:childkey="OID" />
+        <msdata:Relationship name="FK_TemplateItemTemplateItems_CardReferenceCardReferencesTemplateItemsOIDTemplateItem_x0021_" msdata:parent="TemplateItemTemplateItems_CardReferenceCardReferences" msdata:child="TemplateItem" msdata:parentkey="TemplateItems" msdata:childkey="OID" />
+        <msdata:Relationship name="FK_TemplateItemTemplateItems_CardReferenceCardReferencesCardReferencesOIDCardReference_x0021_" msdata:parent="TemplateItemTemplateItems_CardReferenceCardReferences" msdata:child="CardReference" msdata:parentkey="CardReferences" msdata:childkey="OID" />
+        <msdata:Relationship name="FK_CardReferenceUsedInTemplatesOIDTemplateItem_x0021_" msdata:parent="CardReference" msdata:child="TemplateItem" msdata:parentkey="UsedInTemplates" msdata:childkey="OID" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:schema>
+  <TemplateItem>
+    <OID>0</OID>
+    <Name>modern</Name>
+    <Description />
+    <OptimisticLockField>0</OptimisticLockField>
+  </TemplateItem>
+  <TemplateItem>
+    <OID>1</OID>
+    <Name>modern</Name>
+    <Description>this is mld cards that will work in modern</Description>
+    <OptimisticLockField>1</OptimisticLockField>
+    <GCRecord>352389512</GCRecord>
+  </TemplateItem>
+  <TemplateItem>
+    <OID>2</OID>
+    <Category>2</Category>
+    <Name>test</Name>
+    <Description>test</Description>
+    <Colors>White, Blue, Red, Black, Green, Colourless</Colors>
+    <OptimisticLockField>0</OptimisticLockField>
+  </TemplateItem>
+  <TemplateCategory>
+    <OID>0</OID>
+    <Name>Land Destruction MLD</Name>
+    <Description>Mass Land Destruction</Description>
+    <OptimisticLockField>10</OptimisticLockField>
+    <GCRecord>2032954810</GCRecord>
+  </TemplateCategory>
+  <TemplateCategory>
+    <OID>1</OID>
+    <Name>Hand Disruption typically for modern</Name>
+    <Description>These are cards that manipulate your oponents hand</Description>
+    <OptimisticLockField>7</OptimisticLockField>
+    <GCRecord>530643175</GCRecord>
+  </TemplateCategory>
+  <TemplateCategory>
+    <OID>2</OID>
+    <Name>ManaBases</Name>
+    <Description>this is my manabases</Description>
+    <OptimisticLockField>1</OptimisticLockField>
+  </TemplateCategory>
+  <XPObjectType>
+    <OID>0</OID>
+    <TypeName>CockatriceDeckTemplateBuilder.Main.Database.databasev2.TemplateCategory</TypeName>
+    <AssemblyName>CockatriceDeckTemplateBuilder.Main</AssemblyName>
+  </XPObjectType>
+  <XPObjectType>
+    <OID>1</OID>
+    <TypeName>CockatriceDeckTemplateBuilder.Main.Database.databasev2.TemplateItem</TypeName>
+    <AssemblyName>CockatriceDeckTemplateBuilder.Main</AssemblyName>
+  </XPObjectType>
+</XpoDataSet>

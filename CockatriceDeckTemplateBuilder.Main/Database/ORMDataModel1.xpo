@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0351c6e5-d33b-4926-a780-30de5be3cf5c" namespace="CockatriceDeckTemplateBuilder.Main.Database.databasev2" dataBaseShemaInfo="H4sIAAAAAAAEAN1X227bOBB9X2D/wfBzaPEuqZBdtE63CLpbFLkU+zoih46wsmSIUpL+/VK+NXbSrYsENrAPQcQzMyYP58yQzN4+zMvBHTa+qKvxkI3o8O3k99+y9+Dxqq0bmOFF5epB8Kr8mwdvx8Pbtl28iaL7+/vRvRjVzSzilLLo77/+vDK3OIfh1rn4uTMpKt9CZXAYZh0MsmvIS/T9lMvxBnkEbKDPMMfJNc4XJbQ4DX+zuinQZ9F36zbgQ9Vjk7bpMIvWg63xvPA9cLOw4UcmDkofnHbBre/HrrAXdsKRMc2tIE4zRqTQnKSxi4mKUTilYmmZzKK18zZ4WpfdvPI7XH4IB0PPYWWc9J9Z9AjYcfwver9K8TFNdEzHgkuiqLFEJgIIgHCEQq5jNDFqiJ/QDOHRC5ieozdNsWiDHI9PmBmOLuWKWMlNyKuQJAEpCXOMoRGSGYcHE34OXavzl/V90eL8KMrWKQDkiSNGIiUSmCW5gIRopCa10qWJEK+q7HXlfjt+slNq0OaxIDpRgWrMU5JrqgmzjkrGKVrBXlvdp6ljlfDExaCIc1YSmTtO8jxwRq6lNVIqKez/qo4lUymGLkVAcSRSqf4LBMkxp1JBkgj7VMUvJBz+1Y0/QZOGUJQp1wRR9k1aSwLc9KwTw63LVQz6qD1rCo29RIcNhmP9KE1LMiFYbjlRSd5vgYzDcayQcMxRx1JTaZ+27Zc0rRuP9qLaNOcTJF2ES5QSaUJyCq6/gCBJtKBB4C7ATqYmPTzpB3fqxh6fqaOpSrV0BGkOIbc2JonUgoBMONWJ08jo65dyV7Un6FqaWaodErQqJFVLJGDiUNgBlygRhTj8unVIJa/H312y/sqP9ktTmyU4iFbw19X7IDT1uw8Piwa9H51DC6M7zkb8bLA2j/vRSI/o2WDalW3X4LjCrm2gPBt86fKyMJ/w23X9D1bjPEksi5W0MaUoU8iizRTL+aYleI++T8Blt93d7J0NS0NXPKzXtYKuOrcDXeK8vsN9xxW67zsNz5zJTWVuoZphUPdyvNqa59aQhZ1ZYNMWJ17bD5aRfcQKm/45VM/nWLV+rdEn8I5zOKmLWfj8owhS2IvYtS3DzrHEFt95X5sC+uN9E/OMYRnwuSvLXmbv8RbuiroJKnIQ9BEKbN8SHp7R3stz8i/N9Ij5og4AAA==" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="withLowercase" fieldNamePrefix="_" collectionPropertiesType="IListCompatible" useStringInsteadChar="true" useNameOf="true" connectionStringName="database_v2" createdInVersion="21.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="21.2.6.0" name="databasev2" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="890f5cea-059d-4576-bf0f-b2139723ad73">
+      <xpObject Id="2e1162d3-f611-4362-97f7-57e3f5574d14" name="TemplateCategories" baseClass="XPObject" userFileName="TemplateCategories" designerFileName="TemplateCategories.Designer" className="TemplateCategories" virtualName="TemplateCategories">
+        <fields>
+          <generalXpObjectHasFields Id="2176e40a-3ae7-4e0d-838c-64eb242ffafd">
+            <field Id="ef167324-50cd-483a-aa3f-0ab67ec7e6a7" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="0f96a0cb-05f3-4ba0-982a-1b236a476d41">
+            <field Id="1c2ef925-d42c-4334-8a44-1f11ec341cfe" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="ff654033-0b1e-4027-a51c-0bab94010bd5" sourceCollectionName="TemplateItems" name="TemplateItemReferencesTemplateCategories" targetFieldName="Category">
+            <xpObjectMoniker Id="69aaab8f-c4e0-4a1d-b3a8-6e0c9d4f9833" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="cb3ef3a3-a4fb-462d-aef0-5717c2d6fd4a">
+            <collectionField Id="900e4c3f-a0c0-4625-84b7-57c58b59b39e" name="TemplateItems" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="c1f932a6-6ba0-41c0-bf37-dfac944af875">
+      <xpObject Id="69aaab8f-c4e0-4a1d-b3a8-6e0c9d4f9833" name="TemplateItem" baseClass="XPObject" userFileName="TemplateItem" designerFileName="TemplateItem.Designer" className="TemplateItem" virtualName="TemplateItem">
+        <fields>
+          <generalXpObjectHasFields Id="6fcdcc9d-0713-4155-8ea1-6927f0210a4e">
+            <field Id="90cedb73-6850-4729-b606-1df04120ed31" name="Category" virtualColumnType="TemplateCategories" logicalType="TemplateCategories" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="346917f5-d6fb-45c5-8dd9-b953e515250c">
+            <field Id="5828f7a5-ffd4-4bf2-bb50-e264dc44543d" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4cf08909-7c34-4fc0-a6da-74505b32cf22">
+            <field Id="4159e0ab-a52e-455b-a5a3-beb045a883d3" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="eff452e2-c232-4a35-84f0-b390ac9168d2">
+            <field Id="eaf98926-ee4d-4864-a2ce-458c2dfb57a6" name="Colors" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="5d919aaa-f65e-4f1f-a52e-c830f9c92f7d">
+            <collectionField Id="8ba009f5-9b8c-4d43-a22a-28dfe6bb5fc9" name="CardReferences" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="58804499-32d2-4ddb-bfed-5c4a0ca3ac9e">
+      <xpObject Id="41331bd2-58bd-4847-975e-2ebe674604de" name="CardReference" baseClass="XPObject" userFileName="CardReference" designerFileName="CardReference.Designer" className="CardReference" virtualName="CardReference">
+        <fields>
+          <generalXpObjectHasFields Id="46ee3d62-428b-4506-a2f5-1188b034b37f">
+            <field Id="30015398-b0af-436e-8630-bef539f49c96" name="UsedInTemplates" virtualColumnType="TemplateItem" logicalType="TemplateItem" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5cbf57ad-a792-4bb1-9f05-22b99aa08d00">
+            <field Id="f095964f-e0ba-48d7-8463-a482068f6e10" name="Card" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2d72c137-ef0d-4e9d-95c1-d5939cfe143d">
+            <field Id="461d06fe-ed5f-464e-ac76-e61d4e4ee337" name="Count" columnType="Int64" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <mMTarget>
+          <manyToManyRelationship Id="4938e345-5d08-46f4-b07d-f72501f64a6e" sourceCollectionName="TemplateItems" name="TemplateItemReferencesCardReference" targetCollectionName="CardReferences">
+            <xpObjectMoniker Id="69aaab8f-c4e0-4a1d-b3a8-6e0c9d4f9833" />
+          </manyToManyRelationship>
+        </mMTarget>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="4cf71f81-e929-4a7c-8b62-af3bf3f951bd">
+            <collectionField Id="c22ce4ad-4bc6-4858-8a1a-331e615c6544" name="TemplateItems" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

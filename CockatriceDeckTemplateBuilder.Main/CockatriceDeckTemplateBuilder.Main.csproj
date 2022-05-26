@@ -1,0 +1,197 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B5EEF35-1D0B-46EA-ABB2-0AB0F1219488}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CockatriceDeckTemplateBuilder.Main</RootNamespace>
+    <AssemblyName>CockatriceDeckTemplateBuilder.Main</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v21.2" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2" />
+    <Reference Include="DevExpress.Data.v21.2" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.2.Core" />
+    <Reference Include="DevExpress.Utils.v21.2" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\GlobalVariables.cs" />
+    <Compile Include="Database\ORMDataModel1Code\CardReference.cs" />
+    <Compile Include="Database\ORMDataModel1Code\CardReference.Designer.cs">
+      <DependentUpon>CardReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ORMDataModel1Code\ConnectionHelper.cs" />
+    <Compile Include="Database\ORMDataModel1Code\TemplateCategories.cs" />
+    <Compile Include="Database\ORMDataModel1Code\TemplateCategories.Designer.cs">
+      <DependentUpon>TemplateCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ORMDataModel1Code\TemplateItem.cs" />
+    <Compile Include="Database\ORMDataModel1Code\TemplateItem.Designer.cs">
+      <DependentUpon>TemplateItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CategoryEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CategoryEditorDialog.Designer.cs">
+      <DependentUpon>CategoryEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TemplateDialog.Designer.cs">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\DockPanels\CardDataBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolWindows\DockPanels\CardDataBase.Designer.cs">
+      <DependentUpon>CardDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\DockPanels\Templates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolWindows\DockPanels\Templates.Designer.cs">
+      <DependentUpon>Templates.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Dialogs\CategoryEditorDialog.resx">
+      <DependentUpon>CategoryEditorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TemplateDialog.resx">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ToolWindows\DockPanels\CardDataBase.resx">
+      <DependentUpon>CardDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\DockPanels\Templates.resx">
+      <DependentUpon>Templates.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Database\ORMDataModel1.xpo" />
+    <None Include="Database\ORMDataModel1.xpo.diagram">
+      <DependentUpon>ORMDataModel1.xpo</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\CockatriceDeckTemplateBuilder.Main.Database.databasev2.TemplateCategory.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\SettingsPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Icons\icons8-cancel-100.png" />
+    <Content Include="Resources\Icons\icons8-check-circle-100.png" />
+    <Content Include="Resources\Icons\icons8-minus-32.png" />
+    <Content Include="Resources\Icons\icons8-minus-16.png" />
+    <Content Include="Resources\Icons\icons8-minus-100.png" />
+    <Content Include="Resources\Icons\icons8-pencil-32.png" />
+    <Content Include="Resources\Icons\icons8-pencil-16.png" />
+    <Content Include="Resources\Icons\icons8-pencil-100.png" />
+    <Content Include="Resources\Icons\icons8-plus-+-32.png" />
+    <Content Include="Resources\Icons\icons8-plus-+-64.png" />
+    <Content Include="Resources\Icons\icons8-plus-+-16.png" />
+    <Content Include="Resources\Icons\icons8-plus-+-100.png" />
+    <Content Include="Resources\Icons\icons8-template-58.png" />
+    <Content Include="Resources\Icons\Icon_Database _32X32.png" />
+    <Content Include="Resources\Icons\Icon_Database.png" />
+    <Content Include="Resources\Icons\Icon_StorageAndSources.png" />
+    <Content Include="Resources\Icons\Icon_Settings-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\Xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
